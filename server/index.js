@@ -145,7 +145,7 @@ app.delete('/api/upload/:filename', authMiddleware, (req, res) => {
 // ── Gallery helpers ──
 app.post('/api/gallery', authMiddleware, upload.single('image'), (req, res) => {
   const content = loadContent();
-  const alt = req.body.alt || 'Medimath Gallery';
+  const alt = req.body.alt || 'Biotrons Gallery';
   let src = req.body.src || '';
 
   if (req.file) {
@@ -241,7 +241,7 @@ app.use((err, _req, res, _next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n  Medimath Website + Admin Panel`);
+  console.log(`\n  Biotrons Website + Admin Panel`);
   console.log(`  Website:  http://localhost:${PORT}`);
   console.log(`  Admin:    http://localhost:${PORT}/admin`);
   console.log(`  Login:    ${adminConfig.username} / ${adminConfig.password}\n`);

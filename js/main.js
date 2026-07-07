@@ -1,4 +1,4 @@
-/* Medimath Career Institute — Main JavaScript */
+/* Biotrons Career Institute — Main JavaScript */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -441,7 +441,7 @@ function renderGallery(container, limit) {
   container.innerHTML = images.map(g => `
     <div class="gallery-item" data-lightbox>
       ${g.src
-        ? `<img src="${g.src}" alt="${g.alt || 'Medimath Gallery'}" loading="lazy">`
+        ? `<img src="${g.src}" alt="${g.alt || 'Biotrons Gallery'}" loading="lazy">`
         : `<div class="gallery-placeholder">${g.icon || '📷'}</div>`}
     </div>
   `).join('');

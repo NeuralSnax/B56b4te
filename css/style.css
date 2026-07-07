@@ -1,4 +1,4 @@
-/* Medimath Career Institute — Main Stylesheet */
+/* Biotrons Career Institute — Main Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -246,7 +246,7 @@ ul { list-style: none; }
 .logo-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(135deg, var(--orange), var(--blue));
+  background: linear-gradient(135deg, #10B981, var(--blue), var(--orange));
   border-radius: 10px;
   display: flex;
   align-items: center;

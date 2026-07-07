@@ -1,7 +1,7 @@
 {
-  "name": "medimath-website",
+  "name": "biotrons-website",
   "version": "1.0.0",
-  "description": "Medimath Career Institute website with admin panel",
+  "description": "Biotrons Career Institute website with admin panel",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",

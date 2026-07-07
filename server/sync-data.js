@@ -25,7 +25,7 @@ function generateDataJs(content) {
     { href: 'contact.html', label: 'Contact' }
   ];
 
-  return `/* Medimath Career Institute — Auto-generated from data/content.json */
+  return `/* Biotrons Career Institute — Auto-generated from data/content.json */
 /* Last updated: ${new Date().toISOString()} */
 
 const SITE = ${JSON.stringify(site, null, 2)};

@@ -1,4 +1,4 @@
-/* Medimath Career Institute — Shared Components */
+/* Biotrons Career Institute — Shared Components */
 
 function getCurrentPage() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
@@ -46,11 +46,7 @@ function renderNavbar() {
     <nav class="navbar">
       <div class="container">
         <a href="index.html" class="logo">
-          ${SITE.logo ? `<img src="${SITE.logo}" alt="Medimath" class="logo-img" style="height:44px;width:auto;">` : '<div class="logo-icon">M</div>'}
-          <div class="logo-text">
-            <h1>Medimath</h1>
-            <span>Career Institute</span>
-          </div>
+          ${SITE.logo ? `<img src="${SITE.logo}" alt="Biotrons" class="logo-img" style="height:44px;width:auto;">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
         </a>
         <div class="nav-links">${links}</div>
         <div class="nav-actions">
@@ -72,11 +68,7 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="index.html" class="logo">
-              ${SITE.logoWhite ? `<img src="${SITE.logoWhite}" alt="Medimath" style="height:50px;width:auto;margin-bottom:12px;">` : '<div class="logo-icon">M</div>'}
-              <div class="logo-text">
-                <h1>Medimath</h1>
-                <span>Career Institute</span>
-              </div>
+              ${SITE.logoWhite ? `<img src="${SITE.logoWhite}" alt="Biotrons" style="height:50px;width:auto;margin-bottom:12px;">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
             </a>
             <p>${SITE.tagline}. Empowering students in Indore to achieve their dreams in NEET & JEE with expert faculty and proven results.</p>
             <div class="social-links">
@@ -145,7 +137,7 @@ function renderDemoModal() {
       <div class="modal">
         <button class="modal-close" aria-label="Close">&times;</button>
         <h3>Book Your Free Demo Class</h3>
-        <p>Experience Medimath's teaching methodology firsthand. Fill in your details and we'll schedule your free demo.</p>
+        <p>Experience Biotrons's teaching methodology firsthand. Fill in your details and we'll schedule your free demo.</p>
         <form class="demo-form enquiry-form" style="padding:0;box-shadow:none;">
           <div class="form-group">
             <label for="demo-name">Full Name *</label>

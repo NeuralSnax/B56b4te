@@ -56,15 +56,18 @@ body {
 .login-logo {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--orange), var(--blue));
+  background: transparent;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-weight: 800;
-  font-size: 1.3rem;
   margin-bottom: 16px;
+}
+
+.login-logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
 }
 
 /* Layout */

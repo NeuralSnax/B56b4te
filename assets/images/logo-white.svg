@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" role="img" aria-label="Biotrons">
+  <defs>
+    <linearGradient id="bioGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="4" width="40" height="40" rx="10" fill="url(#bioGradW)"/>
+  <path d="M14 14c0-2 1.5-3 4-3h6c4 0 7 2.5 7 6.5S28 24 24 24h-4v10h-6V14z" fill="#fff"/>
+  <path d="M20 17h4c2 0 3.5 1 3.5 3s-1.5 3-3.5 3h-4V17z" fill="#E2E8F0" opacity="0.85"/>
+  <text x="50" y="22" font-family="Inter,Segoe UI,sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">Biotrons</text>
+  <text x="50" y="36" font-family="Inter,Segoe UI,sans-serif" font-size="9" font-weight="500" fill="#94A3B8" letter-spacing="0.08em">CAREER INSTITUTE</text>
+</svg>

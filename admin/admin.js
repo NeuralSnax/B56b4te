@@ -1,4 +1,4 @@
-/* Medimath Admin Panel */
+/* Biotrons Admin Panel */
 
 const API = '';
 let token = localStorage.getItem('adminToken');
@@ -193,7 +193,7 @@ async function uploadGalleryFiles(files) {
   for (const file of files) {
     const fd = new FormData();
     fd.append('image', file);
-    fd.append('alt', 'Medimath Gallery');
+    fd.append('alt', 'Biotrons Gallery');
     try {
       await api('/api/gallery', { method: 'POST', body: fd });
       uploaded++;
