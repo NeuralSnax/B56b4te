@@ -243,6 +243,23 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.logo:hover .logo-img {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.18));
+}
+
+.logo-img-footer {
+  height: 52px;
+  margin-bottom: 12px;
+}
+
 .logo-icon {
   width: 44px;
   height: 44px;

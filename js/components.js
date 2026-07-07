@@ -46,7 +46,7 @@ function renderNavbar() {
     <nav class="navbar">
       <div class="container">
         <a href="index.html" class="logo">
-          ${SITE.logo ? `<img src="${SITE.logo}" alt="Biotrons" class="logo-img" style="height:44px;width:auto;">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
+          ${SITE.logo ? `<img src="${SITE.logo}" alt="Biotrons" class="logo-img">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
         </a>
         <div class="nav-links">${links}</div>
         <div class="nav-actions">
@@ -68,7 +68,7 @@ function renderFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="index.html" class="logo">
-              ${SITE.logoWhite ? `<img src="${SITE.logoWhite}" alt="Biotrons" style="height:50px;width:auto;margin-bottom:12px;">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
+              ${SITE.logoWhite ? `<img src="${SITE.logoWhite}" alt="Biotrons" class="logo-img logo-img-footer">` : '<div class="logo-icon">B</div><div class="logo-text"><h1>Biotrons</h1><span>Career Institute</span></div>'}
             </a>
             <p>${SITE.tagline}. Empowering students in Indore to achieve their dreams in NEET & JEE with expert faculty and proven results.</p>
             <div class="social-links">
