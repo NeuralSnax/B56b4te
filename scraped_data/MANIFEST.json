@@ -1,0 +1,46 @@
+{
+  "source": "https://www.medimath.in",
+  "scraped_at": "2026-07-06",
+  "files": {
+    "medimath_data.json": "Master dataset — contact, toppers, testimonials, pages, blog, images",
+    "pages.json": "All 25 WordPress pages via REST API",
+    "posts.json": "All 18 blog posts via REST API",
+    "homepage.html": "Full homepage HTML",
+    "page_about-us.html": "About page HTML",
+    "page_courses.html": "Courses page HTML",
+    "page_results.html": "Results page HTML",
+    "page_gallery.html": "Gallery page HTML",
+    "page_neet-coaching-in-indore.html": "NEET landing page HTML",
+    "page_jee-coaching-in-indore.html": "JEE landing page HTML",
+    "page_blog.html": "Blog listing HTML"
+  },
+  "extracted": {
+    "toppers": 14,
+    "testimonials": 23,
+    "gallery_images": 57,
+    "blog_posts": 18,
+    "wordpress_pages": 25,
+    "faqs": 8,
+    "batches": 8,
+    "hero_slider_images": 4
+  },
+  "contact": {
+    "phone": "+91 11811727",
+    "email": "info@medimath.com",
+    "address": "202, 203, Landmark - Nissan Car Showroom, Vibrant Tower, Gita Bhawan Rd, Manorama Ganj, Indore, MP 452018",
+    "whatsapp": "9111811727",
+    "test_portal": "https://web.classplusapp.com/login",
+    "play_store": "https://play.google.com/store/apps/details?id=co.rios.xnnkh",
+    "socials": {
+      "facebook": "https://www.facebook.com/edumedimath",
+      "instagram": "https://www.instagram.com/medimath",
+      "youtube": "https://www.youtube.com/channel/UCqNkAy6Rd4eb3m-scMj1vUA"
+    }
+  },
+  "integrated_into_site": {
+    "js/data.js": "All scraped content applied to website",
+    "scripts/scrape_medimath.py": "Re-run scraper anytime",
+    "scripts/build_data.py": "Rebuild data.js from scraped files"
+  },
+  "note": "Spam/hack links found in live site HTML nav were excluded from our site. Recommend securing medimath.in WordPress installation."
+}

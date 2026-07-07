@@ -1,0 +1,5 @@
+{
+  "username": "admin",
+  "password": "medimath2026",
+  "sessionSecret": "medimath-admin-secret-change-in-production"
+}

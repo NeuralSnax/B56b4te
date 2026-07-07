@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Medimath Career Institute</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Login -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="login-logo">M</div>
+      <h1>Admin Panel</h1>
+      <p>Medimath Career Institute — Manage content & photos</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="login-user" value="admin" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="login-pass" required autocomplete="current-password" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px;">Sign In</button>
+        <p id="login-error" style="color:#EF4444;font-size:0.85rem;margin-top:12px;display:none;"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="admin-layout hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h2>Medimath Admin</h2>
+        <span>Content Management</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button data-section="site" class="active">⚙️ Site Settings</button>
+        <button data-section="gallery">🖼️ Gallery Photos</button>
+        <button data-section="toppers">🏆 Toppers</button>
+        <button data-section="hero">🎬 Hero Banners</button>
+        <button data-section="testimonials">💬 Testimonials</button>
+        <button data-section="batches">📚 Batches</button>
+        <button data-section="faqs">❓ FAQs</button>
+        <button data-section="announcement">📢 Announcement</button>
+        <button data-section="password">🔒 Change Password</button>
+        <a href="/" target="_blank" style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;">🌐 View Website</a>
+        <button id="logout-btn" style="color:#EF4444;">🚪 Logout</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <div>
+          <h1 id="section-title">Site Settings</h1>
+          <p class="status-bar" id="last-updated"></p>
+        </div>
+        <div class="topbar-actions">
+          <span class="badge" id="save-status">Saved</span>
+          <button class="btn btn-primary" id="save-all-btn">💾 Save & Publish</button>
+        </div>
+      </div>
+
+      <!-- Site Settings -->
+      <section id="panel-site" class="section-panel active">
+        <div class="card">
+          <h3>Contact & Brand Info</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Institute Name</label><input id="site-name"></div>
+            <div class="form-group"><label>Tagline</label><input id="site-tagline"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email</label><input id="site-email" type="email"></div>
+            <div class="form-group"><label>Phone</label><input id="site-phone"></div>
+          </div>
+          <div class="form-group"><label>Address</label><textarea id="site-address" rows="2"></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label>WhatsApp Number</label><input id="site-whatsapp"></div>
+            <div class="form-group"><label>Test Portal URL</label><input id="site-testportal"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Play Store URL</label><input id="site-playstore"></div>
+            <div class="form-group"><label>Company Name</label><input id="site-company"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Social Media Links</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Facebook</label><input id="social-facebook"></div>
+            <div class="form-group"><label>Instagram</label><input id="social-instagram"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>YouTube</label><input id="social-youtube"></div>
+            <div class="form-group"><label>LinkedIn</label><input id="social-linkedin"></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Vision & Mission</h3>
+          <div class="form-group"><label>Vision Text</label><textarea id="vision-text" rows="3"></textarea></div>
+          <div class="form-group"><label>Mission Items (one per line)</label><textarea id="mission-items" rows="4"></textarea></div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="panel-gallery" class="section-panel">
+        <div class="card">
+          <h3>Upload Gallery Photos</h3>
+          <div class="upload-zone" id="gallery-upload-zone">
+            <div class="icon">📷</div>
+            <p>Drag & drop images here or click to browse</p>
+            <p style="font-size:0.8rem;margin-top:4px;">JPG, PNG, WebP — Max 10MB each</p>
+            <input type="file" id="gallery-file-input" accept="image/*" multiple hidden>
+          </div>
+          <div class="image-grid" id="gallery-grid"></div>
+        </div>
+      </section>
+
+      <!-- Toppers -->
+      <section id="panel-toppers" class="section-panel">
+        <div class="card">
+          <h3>Add New Topper</h3>
+          <form id="topper-form" class="form-row" style="align-items:end;">
+            <div class="form-group"><label>Name</label><input name="name" required placeholder="Student name"></div>
+            <div class="form-group"><label>Achievement</label><input name="achievement" placeholder="NEET 2024"></div>
+            <div class="form-group"><label>Photo</label><input type="file" name="image" accept="image/*"></div>
+            <button type="submit" class="btn btn-primary">+ Add Topper</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Current Toppers</h3>
+          <div class="item-list" id="toppers-list"></div>
+        </div>
+      </section>
+
+      <!-- Hero -->
+      <section id="panel-hero" class="section-panel">
+        <div class="card">
+          <h3>Add Hero Banner</h3>
+          <form id="hero-form" style="display:flex;gap:12px;align-items:end;flex-wrap:wrap;">
+            <div class="form-group" style="flex:1;min-width:200px;"><label>Banner Image</label><input type="file" name="image" accept="image/*" required></div>
+            <button type="submit" class="btn btn-primary">+ Add Banner</button>
+          </form>
+          <div class="image-grid" id="hero-grid" style="margin-top:20px;"></div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="panel-testimonials" class="section-panel">
+        <div class="card">
+          <h3>Add Testimonial</h3>
+          <div class="form-group"><label>Quote</label><textarea id="new-testimonial-quote" rows="3" placeholder="Student review..."></textarea></div>
+          <div class="form-row">
+            <div class="form-group"><label>Author Name</label><input id="new-testimonial-author" placeholder="Student name"></div>
+            <div class="form-group"><label>Role</label><input id="new-testimonial-role" value="Student / Parent"></div>
+          </div>
+          <button class="btn btn-primary" id="add-testimonial-btn">+ Add Testimonial</button>
+        </div>
+        <div class="card">
+          <h3>Current Testimonials</h3>
+          <div class="item-list" id="testimonials-list"></div>
+        </div>
+      </section>
+
+      <!-- Batches -->
+      <section id="panel-batches" class="section-panel">
+        <div class="card">
+          <h3>Edit Batch Descriptions</h3>
+          <div id="batches-list"></div>
+        </div>
+      </section>
+
+      <!-- FAQs -->
+      <section id="panel-faqs" class="section-panel">
+        <div class="card">
+          <h3>Add FAQ</h3>
+          <div class="form-group"><label>Question</label><input id="new-faq-q" placeholder="Q. Your question?"></div>
+          <div class="form-group"><label>Answer</label><textarea id="new-faq-a" rows="3"></textarea></div>
+          <button class="btn btn-primary" id="add-faq-btn">+ Add FAQ</button>
+        </div>
+        <div class="card">
+          <h3>Current FAQs</h3>
+          <div class="item-list" id="faqs-list"></div>
+        </div>
+      </section>
+
+      <!-- Announcement -->
+      <section id="panel-announcement" class="section-panel">
+        <div class="card">
+          <h3>Urgency Banner (Homepage)</h3>
+          <div class="form-group">
+            <label>Banner Text</label>
+            <input id="announcement-text" placeholder="New Batch Starting Soon — Limited Seats Available!">
+          </div>
+          <p style="font-size:0.85rem;color:var(--gray-500);">This appears as the orange countdown banner on the homepage.</p>
+        </div>
+      </section>
+
+      <!-- Password -->
+      <section id="panel-password" class="section-panel">
+        <div class="card">
+          <h3>Change Admin Password</h3>
+          <div class="form-group"><label>Current Password</label><input type="password" id="current-pass"></div>
+          <div class="form-group"><label>New Password</label><input type="password" id="new-pass" minlength="6"></div>
+          <div class="form-group"><label>Confirm New Password</label><input type="password" id="confirm-pass"></div>
+          <button class="btn btn-primary" id="change-pass-btn">Update Password</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

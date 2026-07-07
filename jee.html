@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Best JEE coaching in Indore — Medimath Career Institute. JEE Main & Advanced preparation, IIT selections, flexible batches. Book free demo class!">
+  <meta name="keywords" content="JEE coaching Indore, IIT JEE institute Indore, JEE Advanced coaching Indore, JEE Main classes Indore">
+  <title>JEE Coaching in Indore | Medimath Career Institute</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="landing-hero">
+    <div class="container">
+      <div>
+        <div class="hero-badge" style="margin-bottom:20px;">⚙️ JEE Institute in Indore</div>
+        <h1>Best <span>JEE Coaching</span> in Indore</h1>
+        <p style="font-size:1.15rem;color:var(--gray-300);line-height:1.7;margin-bottom:24px;">Your gateway to IITs, NITs, and premier engineering colleges. Medimath offers JEE Main & Advanced coaching with IIT alumni faculty and proven results.</p>
+        <div class="hero-cta" style="justify-content:flex-start;">
+          <button class="btn btn-primary btn-lg" data-modal="demo-modal">Book Free Demo</button>
+          <a href="courses.html" class="btn btn-outline btn-lg">View JEE Batches</a>
+        </div>
+        <div class="landing-stats">
+          <div class="stat-item"><strong>150+</strong><span>IIT Selections</span></div>
+          <div class="stat-item"><strong>99.8%</strong><span>Best JEE Main Score</span></div>
+          <div class="stat-item"><strong>8-8</strong><span>Gurukul Batch</span></div>
+        </div>
+      </div>
+      <div class="vm-image" style="font-size:6rem;">⚙️</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-badge" style="display:block;text-align:center;">JEE Programs</span>
+      <h2 class="section-title">JEE Batches at Medimath</h2>
+      <div class="batches-grid" id="jee-batches"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="seo-content">
+        <div class="seo-block">
+          <h3>JEE Advanced Coaching in Indore</h3>
+          <p>Medimath's JEE Advanced program is designed for serious aspirants targeting IITs. With IIT alumni faculty and advanced problem-solving methodology, we prepare you for the toughest engineering entrance exam in India.</p>
+          <ul>
+            <li>IIT graduate faculty for Physics, Chemistry & Mathematics</li>
+            <li>Advanced-level daily practice and weekly tests</li>
+            <li>Previous year JEE Advanced paper solving sessions</li>
+            <li>Integrated JEE Main + Advanced preparation</li>
+            <li>8-to-8 Gurukul batch for dropper students</li>
+            <li>Olympiad-level problem exposure</li>
+            <li>Regular motivational sessions by IIT toppers</li>
+            <li>Career counseling and college admission guidance</li>
+          </ul>
+        </div>
+        <div class="seo-block">
+          <h3>IIT JEE Coaching Institutes in Indore</h3>
+          <p>Among IIT JEE coaching institutes in Indore, Medimath stands out with affordable fees, flexible batch timings, and a consistent track record of IIT selections including IIT Bombay, IIT Delhi, and IIT Kanpur.</p>
+          <ul>
+            <li>Programs for Class 11, 12, and dropper students</li>
+            <li>Evening batches for school-going students</li>
+            <li>Full-day Gurukul programs for intensive prep</li>
+            <li>Comprehensive digital test portal with analytics</li>
+            <li>Small batch sizes (max 30 students)</li>
+            <li>Transparent and competitive fee structure</li>
+            <li>Located at Vibrant Tower, Manorama Ganj, Indore</li>
+            <li>Scholarship programs for meritorious students</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-badge" style="display:block;text-align:center;">JEE Toppers</span>
+      <h2 class="section-title">Our JEE Achievers</h2>
+      <div class="toppers-grid" id="jee-toppers"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <h2 class="section-title" style="text-align:left;">Start Your JEE Journey</h2>
+          <p style="color:var(--gray-500);line-height:1.8;">Fill in the form and our JEE counselor will guide you to the right batch and preparation strategy.</p>
+        </div>
+        <div id="jee-enquiry-form"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <div id="floating-elements"></div>
+  <div id="site-modals"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const jeeBatches = BATCHES.filter(b => b.tags.includes('JEE'));
+      document.getElementById('jee-batches').innerHTML = jeeBatches.map(b => `
+        <div class="batch-card">
+          <div class="batch-card-icon">⚙️</div>
+          <h3>${b.title}</h3>
+          <p>${b.desc}</p>
+          <div class="batch-meta">
+            ${b.tags.map(t => `<span class="${t.toLowerCase() === 'jee' ? 'jee' : ''}">${t}</span>`).join('')}
+            <span>${b.timing}</span>
+          </div>
+          <button class="btn btn-primary btn-sm" data-modal="demo-modal">Enroll Now</button>
+        </div>
+      `).join('');
+
+      const jeeToppers = TOPPERS.filter(t => t.achievement.includes('JEE') || t.achievement.includes('IIT'));
+      document.getElementById('jee-toppers').innerHTML = jeeToppers.map(t => `
+        <div class="topper-card">
+          <div class="topper-avatar">${t.initials}</div>
+          <h3>${t.name}</h3>
+          <span class="topper-tag gold">${t.achievement}</span>
+          <p style="margin-top:8px;font-size:0.8rem;color:var(--gray-500);font-weight:600;">${t.rank}</p>
+        </div>
+      `).join('');
+
+      document.getElementById('jee-enquiry-form').innerHTML = renderEnquiryForm('jee');
+      initForms();
+      initModals();
+    });
+  </script>
+</body>
+</html>

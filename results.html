@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medimath Career Institute results — Year-wise NEET & JEE toppers from Indore. AIR ranks, IIT admissions, AIIMS selections.">
+  <meta name="keywords" content="NEET results Indore, JEE results Indore, Medimath toppers, IIT selections Indore">
+  <title>Results & Toppers | Medimath Career Institute — Indore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Results</div>
+      <h1>Our Results & Toppers</h1>
+      <p>Celebrating excellence — year after year, our students make us proud</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="toppers-grid" id="results-toppers"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <span class="section-badge" style="display:block;text-align:center;">Year-wise</span>
+      <h2 class="section-title">Detailed Results</h2>
+      <p class="section-subtitle">Browse our students' achievements by year</p>
+      <div id="results-container"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Be Our Next Topper</h2>
+      <p class="section-subtitle">Join Medimath and write your own success story</p>
+      <button class="btn btn-primary btn-lg" data-modal="demo-modal">Book Free Demo Class</button>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <div id="floating-elements"></div>
+  <div id="site-modals"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderToppers(document.getElementById('results-toppers'));
+      renderResults(document.getElementById('results-container'));
+    });
+  </script>
+</body>
+</html>

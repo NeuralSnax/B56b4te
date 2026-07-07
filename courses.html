@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medimath Career Institute courses — JEE & NEET batches for 11th, 12th & droppers in Indore. Evening, Gurukul, and 8-to-8 programs. Enroll now!">
+  <meta name="keywords" content="NEET batch Indore, JEE batch Indore, coaching courses Indore, Medimath batches">
+  <title>Courses & Batches | Medimath Career Institute — Indore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Courses</div>
+      <h1>Our Courses & Batches</h1>
+      <p>Comprehensive JEE & NEET programs designed for every stage of your preparation</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="batches-grid" id="all-batches"></div>
+    </div>
+  </section>
+
+  <!-- Batch Details -->
+  <section class="section section-alt" id="batch-details">
+    <div class="container">
+      <span class="section-badge" style="display:block;text-align:center;">Batch Details</span>
+      <h2 class="section-title">Program Highlights</h2>
+      <div id="batch-detail-sections"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="contact-grid">
+        <div>
+          <h2 class="section-title" style="text-align:left;">Not Sure Which Batch?</h2>
+          <p style="color:var(--gray-500);line-height:1.8;margin-bottom:24px;">Our admission counselors will help you choose the right program based on your class, exam goals, and schedule. Book a free demo class to experience our teaching firsthand.</p>
+          <button class="btn btn-primary btn-lg" data-modal="demo-modal">Book Free Demo Class</button>
+        </div>
+        <div id="courses-enquiry-form"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <div id="floating-elements"></div>
+  <div id="site-modals"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderBatches(document.getElementById('all-batches'));
+
+      const detailsContainer = document.getElementById('batch-detail-sections');
+      detailsContainer.innerHTML = BATCHES.map(b => `
+        <div class="vm-block" id="${b.id}" style="margin-bottom:24px;border-left-color:var(--blue);">
+          <h3 style="font-size:1.2rem;">${b.title}</h3>
+          <p style="margin:12px 0;color:var(--gray-600);">${b.desc}</p>
+          <div class="batch-meta" style="margin-bottom:12px;">
+            <span>⏰ ${b.timing}</span>
+            <span>📖 ${b.medium}</span>
+            ${b.tags.map(t => `<span class="${t.toLowerCase() === 'jee' ? 'jee' : t.toLowerCase() === 'neet' ? 'neet' : ''}">${t}</span>`).join('')}
+          </div>
+          <ul style="list-style:none;display:grid;gap:8px;margin-top:16px;">
+            <li style="padding-left:24px;position:relative;color:var(--gray-600);"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span> Comprehensive study material & test portal access</li>
+            <li style="padding-left:24px;position:relative;color:var(--gray-600);"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span> Daily doubt-solving sessions</li>
+            <li style="padding-left:24px;position:relative;color:var(--gray-600);"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span> Weekly mock tests with performance analytics</li>
+            <li style="padding-left:24px;position:relative;color:var(--gray-600);"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">✓</span> Personal mentor assigned to every student</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" style="margin-top:16px;" data-modal="demo-modal">Enroll Now</button>
+        </div>
+      `).join('');
+
+      document.getElementById('courses-enquiry-form').innerHTML = renderEnquiryForm('courses');
+      initForms();
+      initModals();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medimath Career Institute testimonials — Reviews from NEET & JEE toppers and parents in Indore. 5-star rated coaching institute.">
+  <meta name="keywords" content="Medimath reviews, NEET coaching reviews Indore, JEE coaching testimonials">
+  <title>Testimonials | Medimath Career Institute — Indore</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Testimonials</div>
+      <h1>Student & Parent Testimonials</h1>
+      <p>Real stories from those who trusted Medimath with their dreams</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;" id="all-testimonials"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title">Join Our Success Stories</h2>
+      <p class="section-subtitle">Experience the Medimath difference — book your free demo class today</p>
+      <button class="btn btn-primary btn-lg" data-modal="demo-modal">Book Free Demo Class</button>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <div id="floating-elements"></div>
+  <div id="site-modals"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('all-testimonials');
+      container.innerHTML = TESTIMONIALS.map(t => `
+        <div class="testimonial-inner" style="height:auto;">
+          <div class="stars">★★★★★</div>
+          <blockquote>"${t.quote}"</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-author-avatar">${t.initials || t.author.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>
+            <div>
+              <h4>${t.author}</h4>
+              <span>${t.role || 'Student / Parent'}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
